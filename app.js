@@ -27,10 +27,10 @@ var host = normalizePort(process.env.HOST || 'localhost');
 var port = normalizePort(process.env.PORT || '3000');
 
 var defaultUrl = '';
-if(  host !== 'localhost'){
-    var defaultUrl = host;    
-}else{
+if(  host == 'localhost' && port == '3000'){
     var defaultUrl = host+':'+port;
+}else{
+    var defaultUrl = 'efarmxapi.herokuapp.com';    
 }
 console.log(defaultUrl);
 
