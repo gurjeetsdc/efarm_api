@@ -23,8 +23,17 @@ app.use(cookieParser())
 app.use('/api/users', users);
 app.use('/api/auth', auth);
 
-var port = '3000';
-var defaultUrl = 'localhost:'+port
+var host = normalizePort(process.env.HOST || 'localhost');
+var port = normalizePort(process.env.PORT || '3000');
+
+var defaultUrl = '';
+if(  host !== 'localhost'){
+    var defaultUrl = host;    
+}else{
+    var defaultUrl = host+':'+port;
+}
+console.log(defaultUrl);
+
 var swaggerDefinition = {
     info: { // API informations (required)
         title: 'eFarmX API Documentation', // Title (required)
@@ -55,5 +64,25 @@ app.get('/swagger.json', function(req, res) {
 app.use('/documentation', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+
+function normalizePort(val) {
+  var port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
+
+  if (port >= 0) {
+    // port number
+    return port;
+  }
+
+  return false;
+}
 
 module.exports = app;
