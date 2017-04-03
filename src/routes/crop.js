@@ -34,7 +34,7 @@ var cropController   = require('../controllers/crop');
 *           $ref: '#/definitions/crop'
 */
 
-router.get('/crops/', authController.isAuthenticated,cropController.getCrops);
+router.get('/crops', authController.isAuthenticated,cropController.getCrops);
 
 /**
 * @swagger
