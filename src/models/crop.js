@@ -32,8 +32,7 @@ var CropSchema   = new mongoose.Schema({
 	created: { type: Date, default: Date.now},
 	created_by: { type: Date},
 	modified: { type: Date, default: Date.now},
-	modified_by: { type: String}
-   
+	modified_by: { type: String},   
    	userId: { type: String,required: true },
 });
 
