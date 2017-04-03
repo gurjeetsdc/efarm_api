@@ -28,10 +28,14 @@ var cropController   = require('../controllers/crop');
 *     tags: [Crops]
 *     responses:
 *       200:
-*         description: API is working.
+*         description: success
 *         schema:
 *           type: object
+*           $ref: '#/definitions/crop'
 */
+
+router.get('/crops/', authController.isAuthenticated,cropController.getCrops);
+
 /**
 * @swagger
 * /crops:
