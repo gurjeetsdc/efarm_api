@@ -101,25 +101,26 @@ router.post('/crops',authController.isAuthenticated, cropController.postCrops);
 
 router.get('/crops/:crop_id', authController.isAuthenticated,cropController.getCrop);
 
+
 /**
  * @swagger
- * /crops/{id}:
+ * /crops/{crop_id}:
  *   put:
- *     tags: Crops
- *     description: Updates a single Crop
- *     produces: application/json
+ *     tags:
+ *       - Crops
+ *     description: Deletes a single crop
+ *     produces:
+ *       - application/json
  *     parameters:
- *       name: crop
- *       in: body
- *       description: Fields for the crop resource
- *       schema:
- *         type: array
- *         $ref: '#/definitions/crop'
+ *       - name: crop_id
+ *         description: crops's id
+ *         in: path
+ *         required: true
+ *         type: integer
  *     responses:
  *       200:
- *         description: Successfully updated
+ *         description: Successfully Updated
  */
-
 router.put('/crops/:crop_id', authController.isAuthenticated, cropController.putCrop);
 
 /**
