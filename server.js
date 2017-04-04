@@ -86,14 +86,13 @@ var swaggerDefinition = {
         description: 'API Documentation', // Description (optional)
     },
     host:  defaultUrl, // Host (optional)    
-    basePath: '/api', // Base path (optional)
+    basePath: '/api', // Base path (optional)    
 };
 
 // Options for the swagger docs
 var options = {
     // Import swaggerDefinitions
-    swaggerDefinition: swaggerDefinition,
-    validatorUrl=null,    
+    swaggerDefinition: swaggerDefinition,     
     apis: ['./src/routes/*.js'],
 };
 
