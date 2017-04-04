@@ -86,6 +86,7 @@ var swaggerDefinition = {
         description: 'API Documentation', // Description (optional)
     },
     host:  defaultUrl, // Host (optional)
+    validatorUrl: undefined,
     basePath: '/api', // Base path (optional)
 };
 
