@@ -93,7 +93,7 @@ var swaggerDefinition = {
 var options = {
     // Import swaggerDefinitions
     swaggerDefinition: swaggerDefinition,
-    validatorUrl="false",    
+    validatorUrl=null,    
     apis: ['./src/routes/*.js'],
 };
 
